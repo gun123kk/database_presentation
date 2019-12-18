@@ -17,27 +17,15 @@ include("mysql_connect.inc.php");
 		
         echo '帳號:<input type = "text" name = "first" value =""><br><br>';
 		echo '密碼:<input type = "password" name = "pwd" value =""><br><br>';
-		echo '信箱:<input type = "email" name = "email"><br><br>';
-		echo '<input type = "submit" name = "check" value ="確認" >';
+		echo '暱稱:<input type = "text" name = "name"><br><br>';
+		echo '<select name="sex">';
+		echo '<option value="男">男</option>';
+		echo '<option value="女">女</option>';		
+		echo '</select>';
+		echo '<br><br>';
+		echo '<input type = "submit" name = "check" value ="送出" >';
 		
-		/*if(empty($First))
-			echo '帳號不能為空的';
-		for($i = 0;$i<mysql_num_rows($data);$i++){
-			$rs=mysql_fetch_row($data);
-			if($First == $rs[0] ){
-				echo '<meta http-equiv=REFRESH CONTENT=2;url=create.php>';
-				echo '此帳號已有人使用!';
-			}	
-		}*/
-        /*$email = $_SESSION['account'];
-        $sql = "SELECT * FROM myaccount where email='$email'";
-        $result = mysql_query($sql);
-        $row = mysql_fetch_row($result);
-        echo "<form name=\"form\" method=\"post\" action=\"resetpwd_finish.php\">"; 
-		echo "Account:<input type=\"text\" name=\"ID\" value=\"$row[0]\" /><br>";
-        echo "Enter the user Email:<input type=\"text\" name=\"email\" value=\"$row[2]\" /> <br>"; 
-        echo "<input type=\"submit\" name=\"button\" value=\"Submit\" />";
-        echo "</form>";*/
+		
 
 
 ?>

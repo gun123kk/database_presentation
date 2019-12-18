@@ -21,7 +21,7 @@ $PWD = $_POST['PWD'];
 $sql = "SELECT * FROM commiter WHERE COMTR_ACCOUNT ='$ID'";
 $result = mysqli_query($conn,$sql);
 $row = @mysqli_fetch_row($result);
-if($ID != null && $PWD != null && $row[2] == $ID && $row[3] == $PWD)
+if($ID != null && $PWD != null && $row[3] == $ID && $row[4] == $PWD)
 {
         
         $_SESSION['Account'] = $ID;

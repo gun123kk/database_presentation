@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-        $dbname = "DB_Project";
+        $dbname = "project";
         $dbhost = "localhost";
         $dbuser = "root";
         $dbpwd = "";

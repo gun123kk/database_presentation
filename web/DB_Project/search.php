@@ -1,5 +1,6 @@
 <?php
-
+    include("mysql_connect.inc.php");
+    $location = $_POST['Location'];
 ?>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -106,15 +107,36 @@ h2{
    opacity: 1;
    right: 0;
  }
+ .button {
+    background-color: rgba( 0, 0, 0, 0.1); /* Green */
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+
+  .button1 {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
 </style>
+<div style="text-align:right;font-weight:bold;margin:3px auto;">
+    <input class="button button1" type="button" name="Back" value = "返回" onclick="location.href='index.php'">
+</div>
 <div style="text-align:center;font-weight:bold;margin:3px auto;">
     <?php
-        include("mysql_connect.inc.php");
+        
         // mysqli_query($conn,"set names utf8");
         // mysqli_select_db($conn,"DB_Project");
         // $sql = mysqli_query($conn,"select* from db_hw  ");
         
-        $location = $_POST['Location'];
+        
         echo '台北市';
         if($location == "AREA_00")
             echo '中正區';
@@ -168,7 +190,7 @@ h2{
             echo '<th width="10%">序號</th>';
 			echo '<th width="10%" >店名</th>';
 			echo '<th width="10%">地址</th>';
-			echo '<th width="5%">評分</th>';
+			echo '<th width="5%">平均評分</th>';
             echo '<th width="5%">平均價位</th>';
             echo '<th width="5%">電話</th>';
             echo '<th width="5%"></th>';
@@ -196,8 +218,8 @@ h2{
 						echo '<td>'.$score.'</td>';
 						echo '<td>'.$avg_price.'</td>';
                         echo '<td>'.$res_type.'</td>';
-                       
-                        echo '<td> <button  class="example_f" id="commit" onclick="processFormData('.$i.',1)">評論</button></td>';
+                        echo '<td><a  class="example_f" href=commit.php?id='.$id.'>評論</a></td>';
+                        // echo '<td> <button  class="example_f" id="commit" onclick="processFormData('.$i.',0)">評論</button></td>';
                         echo '</tr>';
                         $i = $i + 1;
 					}
@@ -205,56 +227,26 @@ h2{
 			echo '</table>';
 			echo '</form>';
 			echo '</div>';
-			// for($i = 0;$i<mysqli_num_rows($count)-1;$i++){
-			// 	$rs=mysqli_fetch_row($result);
-			// 	echo '<tr>'.'<td>'.$rs[0].'</td>';
-			
-			// 		if($rs[1]==5)
-			// 			echo '<td>中午</td>';
-			// 		else if($rs[1]>5 || $rs[1]<5)
-			// 			echo '<td>第 '.$rs[1].' 節</td>';
-
-			// 	if($rs[2] == 1)
-			// 		echo '<td>A5-611</td>';
-			// 	else if($rs[2] == 2)
-			// 		echo '<td>A5-705B</td>';
-			// 	else if($rs[2] == 3)
-			// 		echo '<td>A5-804</td>';
-			// 	else if($rs[2] == 4)
-			// 		echo '<td>A5-811</td>';
-			// 	//echo '<td>'.$rs[2].'</td>';
-			// 	echo '<td>'.$rs[3].'</td>';
-			// 	echo '<td>';
-			// 	echo '<form method="POST" name="LoginForm">';
-			// 	// if($rs[3] == $_SESSION['account']){
-			// 	// 	echo '<input type="submit" name="remove" value="刪除">';
-			// 	// 	echo '<input type="hidden" name="id" value='.$rs[4].'>';	
-			// 	// }
-			// 	echo'</form>';
-			// 	echo '</td>';
-			// 	echo '</tr>';
 				
-			// }
-			
-		// }
-		// else{
-		// 	echo 'You have not login !';
-		// 	echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';	
-		// }			
 	?>
 
 		</center></br>
 
 </div>
-<script >
+<!-- <script >
     function processFormData(row,cell) {
         var nameElement = document.getElementById("table1").rows[row].cells[cell].innerText;
+        // alert(nameElement);
         // const name = .table.rows[0].cells[0].innerHTML;
         // self.location = "commit.php?name=nameElement";
         // document.location.href("commit.php?name="+nameElement);
-        wlocation.href="commit.php";
+        jump(nameElement);
         // alert("你的姓名是 " + nameElement + "\n");
     }
-</script>
+    function jump(nameElement){
+
+        window.location.href = "commit.php?id=" + encodeURI(nameElement);
+    }
+</script> -->
 
 

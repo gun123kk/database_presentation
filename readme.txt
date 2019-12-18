@@ -1,3 +1,3 @@
 for database homework presentation
-leader:Philp Chiang(pony)
+leader:Philp Chiang
 team member:Ivan Yu

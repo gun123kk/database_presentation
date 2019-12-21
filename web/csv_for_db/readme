@@ -1,0 +1,4 @@
+these file.csv is for uploading to phpmyadmin(datebase)
+
+change data type to INT below, because Primary key needs INT type 
+AREA_NUM,RST_NUM,COMTR_NUM and TYPE_NUM 

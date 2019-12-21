@@ -1,5 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
+ session_start();
 if (isset($_POST['ResetPWD']) && !empty($_POST['ResetPWD'])) {
     header ("Location:resetpwd.php");
     exit();
@@ -34,7 +35,11 @@ if (isset($_POST['ResetPWD']) && !empty($_POST['ResetPWD'])) {
       <div class="Container">
         <form action="login.php">
           <div style="text-align:right;font-weight:bold;margin:3px auto;">
-            <button class="button button1" value="登入" >登入</button>
+            <?php
+              if(empty($_SESSION['Account']))
+                echo'<button class="button button1" value="登入" >登入</button>';
+            ?>
+              
           </div>
         </form>
         <div style="text-align:center;font-weight:bold;margin:3px auto;">

@@ -18,7 +18,7 @@ include("mysql_connect.inc.php");
 mysqli_select_db($conn,$dbname);
 $ID = $_POST['ID'];
 $PWD = $_POST['PWD'];
-$sql = "SELECT * FROM COMMITER WHERE COMTR_ACCOUNT ='$ID'";
+$sql = "SELECT * FROM commenter WHERE COMTR_ACCOUNT ='$ID'";
 $result = mysqli_query($conn,$sql);
 $row = @mysqli_fetch_row($result);
 if($ID != null && $PWD != null && $row[2] == $ID && $row[3] == $PWD)

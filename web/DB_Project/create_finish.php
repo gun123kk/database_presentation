@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 include("mysql_connect.inc.php");
-$data="select* from COMMITER";
+$data="select* from commenter";
 //$ID = $POST['ID'];
 $id = $_POST['first'];
 $pwd = $_POST['pwd'];
@@ -41,7 +41,7 @@ else if($name=='')
 }
 if($check == 0)
 {
-		$sql = "INSERT INTO COMMITER(COMTR_ACCOUNT,COMTR_PASSWD,COMTR_NAME,COMTR_SEX) VALUES('$id','$pwd','$name','$sex')";
+		$sql = "INSERT INTO commenter(COMTR_ACCOUNT,COMTR_PASSWD,COMTR_NAME,COMTR_SEX) VALUES('$id','$pwd','$name','$sex')";
         $conn->query($sql);
         echo 'Success!';
 		echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';

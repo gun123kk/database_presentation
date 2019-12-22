@@ -134,7 +134,7 @@ h2{
 <div style="text-align:center;font-weight:bold;margin:3px auto;">
     <?php
         
-        $rst_name = "SELECT * FROM RST_Table WHERE RST_NUM ='$id'";
+        $rst_name = "SELECT * FROM rst_table WHERE RST_NUM ='$id'";
         $rst_name = $conn->query($rst_name);
         $rst_name = $rst_name->fetch_assoc();
         echo $rst_name['RST_NAME'].'評論';
@@ -157,13 +157,14 @@ h2{
             // $count = mysqli_query($conn,"SELECT * FROM db_hw");
             function com_name($com_name){
                 include("mysql_connect.inc.php");
-                $result = "SELECT * FROM COMMITER WHERE COMTR_NUM = '$com_name'";
+                $result = "SELECT * FROM commenter WHERE COMTR_NUM = '$com_name'";
 			    $output = $conn->query($result);
                 while($row = $output->fetch_assoc()) {
                     return $row['COMTR_NAME'];
                 }
-            }
-			$result = "SELECT * FROM COMMIT_LINE WHERE RST_NUM = '$id'";
+            }	
+			#echo $id;
+			$result = "SELECT * FROM comment_line WHERE RST_NUM = '$id'";
 			// mysqli_close($conn);
 			$output = $conn->query($result);
   			// $no_fields=mysqli_num_fields($result);

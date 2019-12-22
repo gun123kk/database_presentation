@@ -138,29 +138,29 @@ h2{
         
         
         echo '台北市';
-        if($location == "AREA_00")
+        if($location == "1001")
             echo '中正區';
-        elseif($location == "AREA_01")
+        elseif($location == "1002")
             echo '大同區';
-        elseif($location == "AREA_02")
+        elseif($location == "1003")
             echo '中山區';
-        elseif($location == "AREA_03")
+        elseif($location == "1004")
             echo '松山區';
-        elseif($location == "AREA_04")
+        elseif($location == "1005")
             echo '大安區';
-        elseif($location == "AREA_05")
+        elseif($location == "1006")
             echo '萬華區';
-        elseif($location == "AREA_06")
+        elseif($location == "1007")
             echo '信義區';
-        elseif($location == "AREA_07")
+        elseif($location == "1008")
             echo '士林區';
-        elseif($location == "AREA_08")
+        elseif($location == "1009")
             echo '北投區';
-        elseif($location == "AREA_09")
+        elseif($location == "1010")
             echo '內湖區';
-        elseif($location == "AREA_10")
+        elseif($location == "1011")
             echo '南港區';
-        elseif($location == "AREA_11")
+        elseif($location == "1012")
             echo '文山區';
         echo '推薦餐廳';
     ?>
@@ -197,7 +197,7 @@ h2{
 			// echo '<td>刪除</td>';
             echo '</tr>';
             // $count = mysqli_query($conn,"SELECT * FROM db_hw");
-			$result = "SELECT * FROM RST_Table WHERE area = '$location'";
+			$result = "SELECT * FROM rst_table WHERE AREA_NUM = '$location'";
 			// mysqli_close($conn);
 			$output = $conn->query($result);
   			// $no_fields=mysqli_num_fields($result);

@@ -138,7 +138,7 @@ h2{
 <?php
         function RES_TYPE($com_name){
             include("mysql_connect.inc.php");
-            $result = "SELECT * FROM TYPE_CAT WHERE TYPE_NUM = '$com_name'";
+            $result = "SELECT * FROM type WHERE TYPE_NUM = '$com_name'";
             $output = $conn->query($result);
             while($row = $output->fetch_assoc()) {
                 return $row['TYPE_NAME'];
@@ -150,7 +150,7 @@ h2{
         echo '<center><br>';
         echo '<div class="table-wrapper" style="align:center;">';
         echo '<form method="POST" name="commit" action="create_commit_finish.php">';
-        $result = "SELECT * FROM Offers Where RST_NUM = '$name'";//抓餐廳名稱  
+        $result = "SELECT * FROM offer Where RST_NUM = '$name'";//抓餐廳名稱  
         $output = $conn->query($result); 
         echo '<input type="hidden" value='.$name.' name = "res_num">';
         echo '推薦類型：<select name = "res_Type">';         

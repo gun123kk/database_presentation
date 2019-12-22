@@ -57,18 +57,18 @@ if (isset($_POST['ResetPWD']) && !empty($_POST['ResetPWD'])) {
                 <tr height="30">
                   <td align="center">台北市：
                     <select name="Location">
-                        <option value="AREA_00">中正區</option>
-                  　     <option value="AREA_01">大同區</option>
-                  　     <option value="AREA_02">中山區</option>
-                  　     <option value="AREA_03">松山區</option>
-                        <option value="AREA_04">大安區</option>
-                    　  <option value="AREA_05">萬華區</option>
-                    　  <option value="AREA_06">信義區</option>
-                    　  <option value="AREA_07">士林區</option>
-                        <option value="AREA_08">北投區</option>
-                    　  <option value="AREA_09">內湖區</option>
-                    　  <option value="AREA_10">南港區</option>
-                  　    <option value="AREA_11">文山區</option>　  
+                        <option value="1001">中正區</option>
+                  　     <option value="1002">大同區</option>
+                  　     <option value="1003">中山區</option>
+                  　     <option value="1004">松山區</option>
+                        <option value="1005">大安區</option>
+                    　  <option value="1006">萬華區</option>
+                    　  <option value="1007">信義區</option>
+                    　  <option value="1008">士林區</option>
+                        <option value="1009">北投區</option>
+                    　  <option value="1010">內湖區</option>
+                    　  <option value="1011">南港區</option>
+                  　    <option value="1012">文山區</option>　  
                     </select>  
                   </td>
                 </tr>

@@ -19,7 +19,7 @@ session_start();
 
 	$ID = $_POST['ID'];
 	$name = $_POST['name'];
-	$sql = "SELECT * FROM commiter WHERE COMTR_ACCOUNT='$ID'";
+	$sql = "SELECT * FROM commenter WHERE COMTR_ACCOUNT='$ID'";
 	$output = $conn->query($sql);
 	$row = $output->fetch_assoc();
 	$name_check = $row['COMTR_NAME'];
@@ -33,7 +33,7 @@ session_start();
 		//$ID = $_SESSION['account'];
 	
 		//更新資料庫資料語法
-		// $sql = "SELECT * FROM commiter where COMTR_ACCOUNT='$ID'";
+		// $sql = "SELECT * FROM commenter where COMTR_ACCOUNT='$ID'";
 		echo $Now = date('Y-m-d H:i:s');
 		echo '<br>';
 		// if($conn->query($sql))

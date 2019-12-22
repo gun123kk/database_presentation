@@ -22,7 +22,7 @@ include("mysql_connect.inc.php");
 
         
         //$email = $_SESSION['account'];
-        $sql = "SELECT * FROM commiter";
+        $sql = "SELECT * FROM commenter";
         $output = $conn->query($sql);
         if ($output ->num_rows > 0) {
             while($row = $output->fetch_assoc()) {

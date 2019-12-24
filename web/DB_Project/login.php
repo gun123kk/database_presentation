@@ -72,7 +72,7 @@ if (isset($_POST['ResetPWD']) && !empty($_POST['ResetPWD'])) {
           不知或忘記密碼，請點選『忘記密碼』按鈕重設密碼
           </div>
           <div style="text-align:center;margin:8px 0 0 0;">
-            <!-- <input style="center"; type="submit"; name="created"; value="新增帳戶" onclick="location.href='create.php'"> -->
+            <input style="center"; type="submit"; name="created"; value="新增帳戶" onclick="location.href='create.php'">
             <input type="button" name="ResetPWD" value = "忘記密碼" onclick="location.href='resetpwd.php'">
           </div>
         </div>

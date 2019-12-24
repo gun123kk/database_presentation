@@ -146,7 +146,7 @@ h2{
         }
         date_default_timezone_set("Asia/Taipei");
         echo "現在日期".date("Y/m/d/ h:i:s").'<br>';
-        $time = date("Y/m/d/ h:i:s");
+        $time = date("Y/m/d/h:i:s");
         echo '<center><br>';
         echo '<div class="table-wrapper" style="align:center;">';
         echo '<form method="POST" name="commit" action="create_commit_finish.php">';
@@ -169,6 +169,8 @@ h2{
         echo '<option value = "5">5星</option>';
         echo '</select><br><br>';
         echo  '評論：  <textarea rows="10" cols="50" name = "commit"></textarea><br><br><br>';
+        
+        echo '<input type ="hidden" name = "time"value = '.$time.'>';
         echo '<input type="submit"  class="button button1" name="login" value="送出">';
         echo '</form>';
         echo '</div>';

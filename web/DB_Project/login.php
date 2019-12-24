@@ -49,13 +49,13 @@ if (isset($_POST['ResetPWD']) && !empty($_POST['ResetPWD'])) {
                 <tr height="30">
                   <td align="right">登入帳號：</td>
                     <td>
-                      <input type="text" name="ID" size="20" maxlength="10" >
+                      <input type="text" name="ID" size="20" maxlength="10" placeholder="at0000">
                     </td>
                 </tr>
                 <tr height="30">
                   <td align="right">登入密碼：</td>
                     <td>
-                      <input type="password" name="PWD" size="20" maxlength="30" class="pwdtext">
+                      <input type="password" name="PWD" size="20" maxlength="30" class="pwdtext" placeholder="1234">
                     </td>
                   </td>  
                 </tr>
@@ -63,15 +63,16 @@ if (isset($_POST['ResetPWD']) && !empty($_POST['ResetPWD'])) {
               <div style="text-align:center;margin:6px 0 0 0;">
                 <!-- <td align="right">帳號:philip  密碼:123456</td><br> -->
                   <input type="submit" name="login" value="登入">
-                <br><br>
+                <br>
               </div>
             </form>
           </div> 
+          
           <div style="text-align:center;margin:8px 0 0 0;">
           不知或忘記密碼，請點選『忘記密碼』按鈕重設密碼
           </div>
           <div style="text-align:center;margin:8px 0 0 0;">
-            <input style="center"; type="submit"; name="created"; value="新增帳戶" onclick="location.href='create.php'">
+            <!-- <input style="center"; type="submit"; name="created"; value="新增帳戶" onclick="location.href='create.php'"> -->
             <input type="button" name="ResetPWD" value = "忘記密碼" onclick="location.href='resetpwd.php'">
           </div>
         </div>

@@ -8,9 +8,50 @@
     $type = $_POST['res_Type'];
     $star = $_POST['star'];
     $commit = $_POST['commit'];
-    echo $ID.'____';
-    echo $id.'___';
-    echo $type.'___';
-    echo $star.'___';
-    echo $commit.'___';
+    $time = $_POST['time'];
+    // echo $time.'+';
+    // echo $ID.'____';
+    // echo $id.'___';
+    // echo $type.'___';
+    // echo $star.'___';
+    // echo $commit.'___';
+
+    function COMTR_NUM($account){
+        include("mysql_connect.inc.php");
+        $select = "select * from commenter where COMTR_ACCOUNT = '$account'";
+        $o = $conn->query($select);
+        $row = $o->fetch_assoc();
+        return $row['COMTR_NUM'];
+    }
+
+    function COM_LINE($id){
+        include("mysql_connect.inc.php");
+        $select = "select count(COM_LINE) from comment_line where RST_NUM = '$id'";
+        $o = $conn->query($select);
+        $row = $o->fetch_assoc();
+        // print_r($row);
+        return $row['count(COM_LINE)'];
+    }
+    echo $id;
+    echo '<br>';
+    echo COM_LINE($id)+1;
+    $line = COM_LINE($id)+1;
+    echo '<br>';
+    echo $time;
+    echo '<br>';
+    echo $star;
+    echo '<br>';
+    echo $commit;
+    echo '<br>';
+    echo COMTR_NUM($ID);
+    $num = COMTR_NUM($ID);
+    $data="select* from comment_line";
+    $output = $conn->query($data);
+    $row = $output->fetch_assoc();
+    $sql = "INSERT INTO comment_line(RST_NUM,COM_LINE,COM_DATE_TIME,COM_STAR,COM_MSG,COMTR_NUM) VALUES('$id','$line','$time','$star','$commit','$num')";
+    $conn->query($sql);
+    echo 'Success!';
+    echo '<form method = "POST">';
+    echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+    echo '</form>';
 ?>

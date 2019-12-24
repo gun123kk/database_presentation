@@ -33,15 +33,18 @@ if (isset($_POST['ResetPWD']) && !empty($_POST['ResetPWD'])) {
   <body>
     <body onload="setFocus()">
       <div class="Container">
-        <form action="login.php">
+        <!-- <form action="login.php"> -->
           <div style="text-align:right;font-weight:bold;margin:3px auto;">
             <?php
-              if(empty($_SESSION['Account']))
-                echo'<button class="button button1" value="登入" >登入</button>';
+              if(empty($_SESSION['Account']))              
+                echo'<a  class="button button1" href="login.php">登入</a>';
+              else{
+                echo'<a  class="button button1" href="profile.php">個人評論頁面</a>';
+                echo'<a  class="button button1" href="logout.php">登出</a>';
+              }
             ?>
-              
           </div>
-        </form>
+        <!-- </form> -->
         <div style="text-align:center;font-weight:bold;margin:3px auto;">
         台北餐廳推薦系統
         </div>

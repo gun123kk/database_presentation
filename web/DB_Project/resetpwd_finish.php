@@ -33,7 +33,7 @@ session_start();
 		//$ID = $_SESSION['account'];
 	
 		//更新資料庫資料語法
-		// $sql = "SELECT * FROM commenter where COMTR_ACCOUNT='$ID'";
+		// $sql = "SELECT * FROM commiter where COMTR_ACCOUNT='$ID'";
 		echo $Now = date('Y-m-d H:i:s');
 		echo '<br>';
 		// if($conn->query($sql))
@@ -47,16 +47,16 @@ session_start();
 			echo '請輸入帳號!';
 			echo '<meta http-equiv=REFRESH CONTENT=2;url=resetpwd.php>';
 	}
-	else if($email =='')
+	else
 	{
-			echo '請輸入信箱!';
+			echo '輸入有誤!';
 			echo '<meta http-equiv=REFRESH CONTENT=2;url=resetpwd.php>';
 	}
-	else if($ID != $ID1 || $email != $email2)
-	{
-			echo '帳號或信箱輸入錯誤!';
-			echo '<meta http-equiv=REFRESH CONTENT=2;url=resetpwd.php>';
-	}
+	// else if($ID != $ID1 || $email != $email2)
+	// {
+	// 		echo '帳號或信箱輸入錯誤!';
+	// 		echo '<meta http-equiv=REFRESH CONTENT=2;url=resetpwd.php>';
+	// }
 ?>
 </table>
 <form>

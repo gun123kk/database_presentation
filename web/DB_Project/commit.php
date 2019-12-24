@@ -1,7 +1,7 @@
 <?php
     $id=$_GET['id'];
     include("mysql_connect.inc.php");
-    
+    session_start();
 ?>
 
 <?php
@@ -162,8 +162,7 @@ h2{
                 while($row = $output->fetch_assoc()) {
                     return $row['COMTR_NAME'];
                 }
-            }	
-			#echo $id;
+            }
 			$result = "SELECT * FROM comment_line WHERE RST_NUM = '$id'";
 			// mysqli_close($conn);
 			$output = $conn->query($result);
@@ -189,11 +188,10 @@ h2{
 			echo '</form>';
             echo '</div>';
         echo'</center></br>';
-        if(empty($_SESSION['Account']))
+        if(!empty($_SESSION['Account']))
             echo'<a  class="example_f" href="create_commit.php?id='.$id.'">評論</a>';
         else
-            echo "<script>alert('警告：無法在確認之後跳頁');</script>";
-				
+            echo '<a  class="example_f" href="login.php">想要評論嗎？請先登入</a>';
     ?>
     
     

@@ -41,7 +41,6 @@ if(empty(check_account($id))){
 	$check = $conn->query($sql);
 	echo $check;
 	echo 'Success!';
-	die;
 	echo '<meta http-equiv=REFRESH CONTENT=2;url=login.php>';
 	// }
 	// print_r(isset($check_account['COMTR_ACCOUNT']));die;

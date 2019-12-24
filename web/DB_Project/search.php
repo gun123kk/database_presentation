@@ -197,7 +197,7 @@ h2{
 			// echo '<td>刪除</td>';
             echo '</tr>';
             // $count = mysqli_query($conn,"SELECT * FROM db_hw");
-			$result = "SELECT * FROM rst_table WHERE AREA_NUM = '$location'";
+			$result = "SELECT * FROM rst_table WHERE AREA_NUM = '$location' ORDER BY RST_STAR DESC";
 			// mysqli_close($conn);
 			$output = $conn->query($result);
   			// $no_fields=mysqli_num_fields($result);

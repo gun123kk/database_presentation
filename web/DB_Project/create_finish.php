@@ -39,9 +39,9 @@ print_r( get_COMTR_NUM());
 if(empty(check_account($id))){
 	$sql = "INSERT INTO commenter(COMTR_NUM,COMTR_NAME,COMTR_ACCOUNT,COMTR_PASSWD,COMTR_SEX) VALUES(get_COMTR_NUM()+1,'$name','$id','$pwd','$sex')";
 	$check = $conn->query($sql);
-	echo $check;
+	// echo $check;
 	echo 'Success!';
-	echo '<meta http-equiv=REFRESH CONTENT=2;url=login.php>';
+	echo '<meta http-equiv=REFRESH CONTENT=5;url=login.php>';
 	// }
 	// print_r(isset($check_account['COMTR_ACCOUNT']));die;
 }

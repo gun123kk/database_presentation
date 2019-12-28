@@ -39,8 +39,15 @@ if (isset($_POST['ResetPWD']) && !empty($_POST['ResetPWD'])) {
               if(empty($_SESSION['Account']))              
                 echo'<a  class="button button1" href="login.php">登入</a>';
               else{
-                echo'<a  class="button button1" href="profile.php">個人評論頁面</a>';
-                echo'<a  class="button button1" href="logout.php">登出</a>';
+                if($_SESSION['Account'] == 'admin'){
+                  echo'<a  class="button button1" href="admin.php">帳戶管理</a>';
+                  echo'<a  class="button button1" href="profile.php">個人評論頁面</a>';
+                  echo'<a  class="button button1" href="logout.php">登出</a>'; 
+                } 
+                else{ 
+                  echo'<a  class="button button1" href="profile.php">個人評論頁面</a>';
+                  echo'<a  class="button button1" href="logout.php">登出</a>';              
+                }
               }
             ?>
           </div>

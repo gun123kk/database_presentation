@@ -37,7 +37,7 @@ function get_COMTR_NUM(){
 print_r( get_COMTR_NUM());
 // die;
 if(empty(check_account($id))){
-	$sql = "INSERT INTO commenter(COMTR_NAME,COMTR_ACCOUNT,COMTR_PASSWD,COMTR_SEX) VALUES(".$name.",".$id.",".$pwd.",".$sex.")";
+	$sql = "INSERT INTO commenter(COMTR_NAME,COMTR_ACCOUNT,COMTR_PASSWD,COMTR_SEX) VALUES("'.$name.'","'.$id.'","'.$pwd.'","'.$sex.'")";
 	$check = $conn->query($sql);
 	// echo $check;
 	echo 'Success!';

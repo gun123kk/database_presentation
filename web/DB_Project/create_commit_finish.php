@@ -60,6 +60,12 @@
     $conn->query($sql);
     $insert = "UPDATE rst_table SET RST_STAR = '$avgStar' WHERE RST_NUM = '$id'";
     $conn->query($insert);
+    $update = "SELECT * FROM offer WHERE RST_NUM ='$id'";
+    $index = $conn->query($update);
+    $r = $index->fetch_assoc();
+    $count= $r['OFS_TYPE_VAL'] + 1;
+    $up = "UPDATE offer SET OFS_TYPE_VAL = '$count' WHERE RST_NUM = '$id' AND TYPE_NUM = '$type'";
+    $conn->query($up);
     echo 'Success!';
     echo '<form method = "POST">';
     echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';

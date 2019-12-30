@@ -157,7 +157,7 @@ h2{
         while($row = $output->fetch_assoc()) {  
             $res_type = $row["TYPE_NUM"];  
             echo $res_type;         
-            echo '<option >'.RES_TYPE($res_type).'</option>';
+            echo '<option value='.$res_type.' >'.RES_TYPE($res_type).'</option>';
         }
         echo '</select><br><br>';
         echo '評分：<select name = "star">';
